@@ -39,19 +39,15 @@ public class ReversePolishMultiCalc {
     /**
      * 去除所有空白符
      *
-     * @param s
-     * @return
      */
     public static String replaceAllBlank(String s) {
-// \\s+ 匹配任何空白字符，包括空格、制表符、换页符等等, 等价于[ \f\n\r\t\v]
+        // \\s+ 匹配任何空白字符，包括空格、制表符、换页符等等, 等价于[ \f\n\r\t\v]
         return s.replaceAll("\\s+", "");
     }
 
     /**
      * 判断是不是数字 int double long float
      *
-     * @param s
-     * @return
      */
     public static boolean isNumber(String s) {
         Pattern pattern = Pattern.compile("^[-\\+]?[.\\d]*$");
@@ -61,8 +57,6 @@ public class ReversePolishMultiCalc {
     /**
      * 判断是不是运算符
      *
-     * @param s
-     * @return
      */
     public static boolean isSymbol(String s) {
         return s.matches(SYMBOL);
@@ -71,8 +65,6 @@ public class ReversePolishMultiCalc {
     /**
      * 匹配运算等级
      *
-     * @param s
-     * @return
      */
     public static int calcLevel(String s) {
         if ("+".equals(s) || "-".equals(s)) {
@@ -85,9 +77,6 @@ public class ReversePolishMultiCalc {
 
     /**
      * 匹配
-     *
-     * @param s
-     * @throws Exception
      */
     public static List<String> doMatch(String s) throws Exception {
         if (s == null || "".equals(s.trim())) throw new RuntimeException("data is empty");
@@ -141,8 +130,6 @@ public class ReversePolishMultiCalc {
     /**
      * 算出结果
      *
-     * @param list
-     * @return
      */
     public static Double doCalc(List<String> list) {
         Double d = 0d;
@@ -172,11 +159,6 @@ public class ReversePolishMultiCalc {
 
     /**
      * 运算
-     *
-     * @param s1
-     * @param s2
-     * @param symbol
-     * @return
      */
     public static Double doTheMath(String s1, String s2, String symbol) {
         Double result;
