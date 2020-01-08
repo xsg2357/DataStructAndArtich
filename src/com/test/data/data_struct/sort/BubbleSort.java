@@ -4,6 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 
+/**
+ * 冒泡排序
+ */
 public class BubbleSort {
 
     public static void main(String[] args) {
@@ -93,7 +96,7 @@ public class BubbleSort {
         /*1次排序:[3, -1, 9, 10, 20]
         2次排序:[-1, 3, 9, 10, 20]
         3次排序:[-1, 3, 9, 10, 20]*/
-        //测试一下冒泡排序的速度o(n^2)
+        //测试一下冒泡排序的速度o(n^2)  时间复杂度计算
         int[] arr2 = new  int[80000];
         for (int i = 0; i < arr2.length; i++) {
             arr2[i] = (int) (Math.random() * 8000000);
@@ -105,6 +108,9 @@ public class BubbleSort {
         System.out.println("sort after:"+sdf.format(new Date()));
     }
 
+    /**
+     * 冒泡排序
+     */
     public static void bubbleSort(int[] arr1) {
         boolean flag = false;//标识变量 标识是否进行过交换
         for (int i = 0; i < arr1.length - 1; i++) {
