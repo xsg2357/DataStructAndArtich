@@ -24,6 +24,8 @@ public class SelectSort {
         System.out.println("sort before:" + sdf.format(date));
         selectDaoSort(arr2);
         System.out.println("sort after:" + sdf.format(new Date()));
+//        sort before:2020-01-09 10:18:11
+//        sort after:2020-01-09 10:18:19
     }
 
     /**

@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Test {
+public class UnicodeTest {
 
     public static void main(String[] args) {
         String test = "\\u5c31\\u50cf\\u8fd9\\u79cd\\u0055\\u006e\\u0069\\u0063\\u006f\\u0064\\u0065\\u7f16\\u7801";
