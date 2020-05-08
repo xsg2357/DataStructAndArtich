@@ -67,9 +67,15 @@ public class SparseArray {
 
         //输出恢复后的二维数组
         System.out.println("输出恢复后的二维数组：");
-        for (int i = 0; i < chessArr1.length; i++) {
-            for (int j = 0; j <chessArr1[i].length ; j++) {
-                System.out.printf("%d\t",chessArr1[i][j]);
+//        for (int i = 0; i < chessArr1.length; i++) {
+//            for (int j = 0; j <chessArr1[i].length ; j++) {
+//                System.out.printf("%d\t",chessArr1[i][j]);
+//            }
+//            System.out.println();
+//        }
+        for (int[] ints : chessArr1) {
+            for (int anInt : ints) {
+                System.out.printf("%d\t", anInt);
             }
             System.out.println();
         }
