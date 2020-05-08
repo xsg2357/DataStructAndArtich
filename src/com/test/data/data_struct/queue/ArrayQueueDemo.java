@@ -28,6 +28,7 @@ public class ArrayQueueDemo {
                     System.out.println("输出一个数");
                     int value = scanner.nextInt();
                     arrayQueue.addQueue(value);
+                    
                     break;
                 case 'g':
                     try {
