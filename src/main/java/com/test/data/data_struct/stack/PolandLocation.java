@@ -15,7 +15,7 @@ public class PolandLocation {
     public static List<String> getListString(String suffixExpression) {
         String[] s = suffixExpression.split(" ");
 
-        return new ArrayList<>(Arrays.asList(s));
+        return new ArrayList<String>(Arrays.asList(s));
     }
 
     /**
@@ -27,7 +27,7 @@ public class PolandLocation {
      * 6) 最后是-运算符，计算出35-6的值，即29， 由此得出最终结果
      */
     public static int cal(List<String> ls) {
-        Stack<String> stack = new Stack<>();
+        Stack<String> stack = new Stack<String>();
         for (String item : ls) {
             //使用正则表达式取出数
             if (item.matches("\\d+")) {//匹配多位数
@@ -38,21 +38,16 @@ public class PolandLocation {
                 int num2 = Integer.parseInt(stack.pop());
                 int num1 = Integer.parseInt(stack.pop());
                 int res = 0;
-                switch (item) {
-                    case "+":
-                        res = num1 + num2;
-                        break;
-                    case "-":
-                        res = num1 - num2;
-                        break;
-                    case "*":
-                        res = num1 * num2;
-                        break;
-                    case "/":
-                        res = num1 / num2;
-                        break;
-                    default:
-                        throw new RuntimeException("运算符号有问题");
+                if ("+".equals(item)) {
+                    res = num1 + num2;
+                } else if ("-".equals(item)) {
+                    res = num1 - num2;
+                } else if ("*".equals(item)) {
+                    res = num1 * num2;
+                } else if ("/".equals(item)) {
+                    res = num1 / num2;
+                } else {
+                    throw new RuntimeException("运算符号有问题");
                 }
                 stack.push(String.valueOf(res));
             }
@@ -68,7 +63,7 @@ public class PolandLocation {
      */
     public static List<String> toInfixExpresionList(String s) {
 
-        List<String> ls = new ArrayList<>();
+        List<String> ls = new ArrayList<String>();
         int i = 0; //指针 用于遍历种子表达式字符串
         StringBuilder str;//多位数拼接
         char c;//每遍历一个字符串 就放到c
@@ -98,7 +93,7 @@ public class PolandLocation {
      * ArrayList [1,+,(,(,2,+,3,),*,4,),-,5] =》 ArrayList [1,2,3,+,4,*,+,5,–]
      */
     public static List<String> parseSuffixExpressionList(List<String> ls) {
-        Stack<String> s1 = new Stack<>();//s1 符号栈
+        Stack<String> s1 = new Stack<String>();//s1 符号栈
         //s2 存储中间结果的栈 整个转换过程中没有pop操作
         //不用Stack<String> s2 直接使用List<String>s2
 //        Stack<String> s2 = new Stack<>();

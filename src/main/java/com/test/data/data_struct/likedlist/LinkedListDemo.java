@@ -71,7 +71,7 @@ public class LinkedListDemo {
         if (head.next == null ){
             return  ;
         }
-        Stack<HeroNode> heroNodes = new Stack<>();
+        Stack<HeroNode> heroNodes = new Stack<HeroNode>();
         HeroNode cur = head.next;
         //将链表所有节点压入栈中
         while (cur != null){
